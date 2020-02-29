@@ -3,47 +3,42 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
-@app.route("/", methods=["GET","POST"])
+@app.route("/api/v1/", methods=["GET"])
 def home():
-    return render_template("index.html")
+    return True
 
 
-@app.route("/<username>", methods=["POST"])
+@app.route("/api/v1/<username>", methods=["GET", "PUT"])
 def user():
     return True
 
 
-@app.route("/<username>/lists", methods=["POST"])
+@app.route("/api/v1/<username>/lists", methods=["GET"])
 def lists():
     return True
 
 
-@app.route("/<username>/posts", methods=["POST"])
+@app.route("/api/v1/<username>/posts", methods=["GET"])
 def posts():
     return True
 
 
-@app.route("/<username>/list/<int:list_id>", methods=["POST"])
+@app.route("/api/v1/<username>/lists/<int:list_id>", methods=["GET", "PUT", "POST"])
 def single_list():
     return True
 
 
-@app.route("/<username>/post/<int:post_id>", methods=["POST"])
+@app.route("/api/v1/<username>/posts/<int:post_id>", methods=["GET", "PUT", "POST"])
 def single_post():
     return True
 
 
-@app.route("/setting", methods=["POST"])
-def setting():
-    return True
-
-
-@app.route("/login", methods=["POST"])
+@app.route("/api/v1/login", methods=["POST"])
 def login():
     return True
 
 
-@app.route("/logout", methods=["POST"])
+@app.route("/api/v1/logout", methods=["POST"])
 def logout():
     return True
 
