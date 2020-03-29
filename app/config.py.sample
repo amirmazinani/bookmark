@@ -1,8 +1,0 @@
-# host address for connect to db
-MYSQL_HOST = '0.0.0.0'
-# username for connect to db
-MYSQL_USERNAME = 'root'
-# password for connect to db
-MYSQL_PASSWORD = '0000'
-# db name
-MYSQL_DB_NAME = 'bookmark'
