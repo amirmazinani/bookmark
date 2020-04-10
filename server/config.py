@@ -3,6 +3,7 @@ import json
 with open("./config.json") as cg:
     config = json.load(cg)
 
+
 class Base():
     SQLALCHEMY_DATABASE_URI = config["SQLALCHEMY_DATABASE_URI"]
     SQLALCHEMY_TRACK_MODIFICATIONS = config["SQLALCHEMY_TRACK_MODIFICATIONS"]
@@ -10,8 +11,8 @@ class Base():
 
 
 class Development(Base):
-    pass
+    FLASK_ENV = "development"
 
 
 class Production(Base):
-    pass
+    FLASK_ENV = "production"
