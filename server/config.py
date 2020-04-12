@@ -11,8 +11,8 @@ class Base():
 
 
 class Development(Base):
-    FLASK_ENV = "development"
+    ENV = "development"
 
 
 class Production(Base):
-    FLASK_ENV = "production"
+    ENV = "production"
