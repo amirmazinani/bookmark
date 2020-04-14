@@ -8,7 +8,7 @@ class User(db.Model):
     __tablename__ = "users"
 
     # table columns
-    id = db.Column(db.Integer, nullable=False, primary_key=True, autoincrement=True)
+    user_id = db.Column(db.Integer, nullable=False, primary_key=True, autoincrement=True)
     username = db.Column(db.String(512), nullable=False, unique=True)
     first_name = db.Column(db.String(128), default="")
     last_name = db.Column(db.String(128), default="")

@@ -17,9 +17,13 @@ def home():
     return 'app is running\n'
 
 # import blueprint
-# from application.components.name import name
-from application.components.users_cmp import users
+from application.components.users import users
+from application.components.links import links
+from application.components.lists import lists
+from application.components.posts import posts
 
 # register blueprint
-# app.register_blueprint(name)
 app.register_blueprint(users)
+app.register_blueprint(links)
+app.register_blueprint(lists)
+app.register_blueprint(posts)
