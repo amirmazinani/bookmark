@@ -1,6 +1,6 @@
 from . import links
 
-from .model import Links
+from .model import Link
 
 
 # @users.route('/<username>/', methods=['GET'])

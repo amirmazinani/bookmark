@@ -1,6 +1,6 @@
 from . import lists
 
-from .model import Lists
+from .model import List
 
 
 # @users.route('/<username>/', methods=['GET'])

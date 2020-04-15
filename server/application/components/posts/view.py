@@ -1,6 +1,6 @@
 from . import posts
 
-from .model import Posts
+from .model import Post
 
 
 # @users.route('/<username>/', methods=['GET'])

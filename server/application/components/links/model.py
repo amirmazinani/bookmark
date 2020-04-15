@@ -4,7 +4,7 @@ from sqlalchemy import Column, Integer, String, Boolean, DateTime, Text
 from application import db
 
 
-class Links(db.Model):
+class Link(db.Model):
     __tablename__ = "links"
 
     # table columns
@@ -16,4 +16,5 @@ class Links(db.Model):
     update_time = db.Column(db.DateTime, default=0)
     visit_count = db.Column(db.Integer, default=0, nullable=False)
     # user_id is foreign key
+    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
 

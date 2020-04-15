@@ -4,7 +4,7 @@ from sqlalchemy import Column, Integer, String, Boolean, DateTime, Text
 from application import db
 
 
-class Posts(db.Model):
+class Post(db.Model):
     __tablename__ = "posts"
 
     # table columns
@@ -18,5 +18,7 @@ class Posts(db.Model):
     visit_count = db.Column(db.Integer, default=0, nullable=False)
     share_count = db.Column(db.Integer, default=0, nullable=False)
     likes_count = db.Column(db.Integer, default=0, nullable=False)
-    # user_id,list_id are foreign keys
+    # foreign keys
+    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
+    list_id = db.Column(db.Integer, db.ForeignKey('lists.list_id'))
 

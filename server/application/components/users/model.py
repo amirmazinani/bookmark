@@ -22,4 +22,7 @@ class User(db.Model):
     create_time = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     update_time = db.Column(db.DateTime, default=0)
     visit_count = db.Column(db.Integer, default=0, nullable=False)
-
+    # foreign key references
+    lists = db.relationship('List', backref='users', lazy='dynamic')
+    posts = db.relationship('Post', backref='users', lazy='dynamic')
+    links = db.relationship('Link', backref='users', lazy='dynamic')

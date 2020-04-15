@@ -4,7 +4,7 @@ from sqlalchemy import Column, Integer, String, Boolean, DateTime, Text
 from application import db
 
 
-class Lists(db.Model):
+class List(db.Model):
     __tablename__ = "lists"
 
     # table columns
@@ -18,6 +18,9 @@ class Lists(db.Model):
     posts_count = db.Column(db.Integer, default=0, nullable=False)
     share_count = db.Column(db.Integer, default=0, nullable=False)
     likes_count = db.Column(db.Integer, default=0, nullable=False)
-    # user_id is foreign key
+    # foreign key
+    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
+    # foreign key references
+    posts = db.relationship('Post', backref='lists', lazy='dynamic')
 
 
