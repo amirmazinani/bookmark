@@ -5,6 +5,14 @@ the app for sharing link
 
 this app have a many features like create a list(collection) that have one or more post
 
+all url end-points:
+
++ prefix path(version): /api/v1
++ users: /[username]
++ links: /[username]/links/[id]
++ lists: /[username]/lists/[id]
++ posts: /[username]/lists/[id]/posts/[id]
+
 TODOs:
 
 - [x] initial base of project (with python & flask framework)
