@@ -50,6 +50,32 @@ def create_link():
     db.session.add(link2)
     db.session.add(link3)
 
+def create_list():
+    list1 = List(
+        title = "ui tips",
+        description = "design and art of user interface",
+        user_id = random.choice(User.query.all()).user_id
+    )
+    list2 = List(
+        title = "web learning",
+        description = "learning web programming in frontend and backend",
+        user_id = random.choice(User.query.all()).user_id
+    )
+    list3 = List(
+        title = "python best practices",
+        description = "scripting python for automating works",
+        user_id = random.choice(User.query.all()).user_id
+    )
+    list4 = List(
+        title = "blockchain",
+        description = "this is a p2p service for all of people",
+        user_id = random.choice(User.query.all()).user_id
+    )
+    db.session.add(list1)
+    db.session.add(list2)
+    db.session.add(list3)
+    db.session.add(list4)
+
 if __name__ == "__main__":
     try:
         if sys.argv[-1] == "delete":
@@ -60,6 +86,7 @@ if __name__ == "__main__":
         elif sys.argv[-1] == "create":
             create_user()
             create_link()
+            create_list()
         else:
             print("error: please add [delete] or [create] argument to run fake data module")
         db.session.commit()
