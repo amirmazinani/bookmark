@@ -19,6 +19,7 @@ class User(db.Model):
     bio = db.Column(db.Text, default="")
     password = db.Column(db.String(266), nullable=False)
     deleted = db.Column(db.Boolean, default=False)
+    private = db.Column(db.Boolean, default=False)
     create_time = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     update_time = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     visit_count = db.Column(db.Integer, default=0)

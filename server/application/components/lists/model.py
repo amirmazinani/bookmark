@@ -12,6 +12,7 @@ class List(db.Model):
     title = db.Column(db.String(512), nullable=False)
     description = db.Column(db.Text, default="")
     deleted = db.Column(db.Boolean, default=False)
+    private = db.Column(db.Boolean, default=False)
     create_time = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     update_time = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     visit_count = db.Column(db.Integer, default=0)
